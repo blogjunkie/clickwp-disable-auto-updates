@@ -4,7 +4,7 @@ Plugin Name: Disable Auto Updates
 Plugin URI: http://clickwp.com/wordpress-support/
 Description: Disables the auto updates feature so that we can backup before updating, and choose the best time to perform updates.
 Author: ClickWP
-Version: 1.0
+Version: 1.1
 Author URI: http://clickwp.com
 */
 
@@ -31,6 +31,9 @@ add_filter( 'allow_minor_auto_core_updates', '__return_false' );
 
 // To disable translation file updates, uncomment the following:
 // add_filter( 'auto_update_translation', '__return_false' );
+
+// Disable email notifications of new updates
+add_filter( 'send_core_update_notification_email', '__return_false' );
 
 
 /**
